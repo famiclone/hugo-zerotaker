@@ -1,0 +1,11 @@
+name = "Zerotaker"
+license = "MIT"
+description = "Minimal theme for Hugo engine"
+homepage = "https://github.com/famiclone/hugo-zerotaker"
+tags = ["blog"]
+features = ["blog"]
+min_version = "0.57.0"
+
+[author]
+  name = "Den Tynok"
+  homepage = "https://github.com/famiclone"

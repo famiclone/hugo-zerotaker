@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    <meta charset="utf-8" />
+    {{ hugo.Generator }}
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="{{ .Site.Author.name }}" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+
+    {{ if .IsHome -}}
+    <title>{{ .Site.Title }}</title>
+    <meta property="og:title" content="{{ .Site.Title }}" />
+    <meta property="og:type" content="website" />
+    <meta name="description" content="{{ .Site.Params.description }}" />
+    {{- else -}}
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}" />
+    <meta property="og:type" content="article" />
+    <meta name="description" content="{{ .Description }}" />
+    {{- end }} <link href="{{ "index.xml" | relURL }}" rel="alternate"
+    type="application/rss+xml" title="{{ .Site.Title }}">
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/latest/normalize.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/monokai.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href={{ "./css/main.css" | relURL }}>
+  </head>
+
+  <body>
+    <div class="container">
+      {{ partial "header.html" }}
+
+      <main class="page-content">

@@ -1,0 +1,20 @@
+{{ partial "head.html" }}
+    <article class="posts">
+
+      {{ range site.RegularPages.GroupByDate "2006" -}}
+      <section>
+        <h2>{{ .Key }}</h2>
+  
+        <ol reversed class="index-list">
+          {{ range .Pages -}}
+          <li>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+          </li>
+          {{- end }}
+        </ol>
+      </section>
+      {{ end }}
+  
+    </article>
+
+{{ partial "footer.html" }}
